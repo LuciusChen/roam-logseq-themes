@@ -1,4 +1,4 @@
-# Roam-Logseq-Themes
+# roam-logseq-themes
 
 TODO
  - 细节优化
