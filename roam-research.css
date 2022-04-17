@@ -1,4 +1,4 @@
-/* 修改自 https://github.com/felixjamestin/felixjamestin.github.io/blob/master/roam-themeset/themes.css */
+/* 修改自 https://github.com/felixjamestin/felixjamestin.github.io */
 :root {
   --font-size: 14px;
   --header-font: "Lato", sans-serif;
@@ -970,6 +970,9 @@ a:hover {
   align-self: baseline;
 }
 
+/***************************************************************
+*********************** Block Reference ************************
+***************************************************************/
 .rm-block-ref {
   padding: 0px;
   margin: -2px 0px;
@@ -977,10 +980,17 @@ a:hover {
   border-bottom: none;
   cursor: pointer;
   font-family: var(--body-font) !important;
+  background-color: rgba(139, 208, 180, 0.2);
 }
 
 .rm-block-ref:hover {
   background: none !important;
+}
+
+.rm-block-ref::before {
+  content: "#";
+  font-size: 30px;
+  color: var(--title-accent-color);
 }
 
 .rm-title-untitled,
