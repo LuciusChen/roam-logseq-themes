@@ -335,6 +335,10 @@
   .bullet-container.bullet-closed {
     background-color: var(--ct-bullet-closed-color);
   }
+
+  .bullet-container.bullet-closed:hover {
+    background-color: var(--ct-page-properties-background);
+  }
   
   .block-control svg {
     color: var(--ct-block-arrow-color);
