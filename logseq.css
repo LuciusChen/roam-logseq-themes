@@ -757,16 +757,6 @@
     color: var(--ct-query-result-page-title-hover);
   }
   
-  /* bullets allignment to the left */
-  
-  .cp__sidebar-main-content .block-control,
-  .cp__sidebar-main-content .block-control:hover {
-    /*     margin-left: -4px; */
-  }
-  
-  .cp__sidebar-main-content > div > div > div > div:nth-child(3) {
-    /*     margin-left: -7px; */
-  }
   /***************************************************************
   ************************ Plugin Market *************************
   ***************************************************************/
