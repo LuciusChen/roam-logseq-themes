@@ -119,20 +119,24 @@ html {
   background-color: var(--main-background-color);
 }
 
-.rm-autocomplete__results [style="border-radius: 2px; background-color: rgb(213, 218, 223); padding: 6px; cursor: pointer;"] {
-    background-color: var(--body-background-color) !important;
+.rm-autocomplete__results
+  [style="border-radius: 2px; background-color: rgb(213, 218, 223); padding: 6px; cursor: pointer;"] {
+  background-color: var(--body-background-color) !important;
 }
 
-.rm-autocomplete__results [style="border-radius: 2px; padding: 6px; cursor: pointer; background-color: rgb(213, 218, 223);"] {
-    background-color: var(--body-background-color) !important;
+.rm-autocomplete__results
+  [style="border-radius: 2px; padding: 6px; cursor: pointer; background-color: rgb(213, 218, 223);"] {
+  background-color: var(--body-background-color) !important;
 }
 
-.rm-autocomplete__results [style="display: flex; border-radius: 2px; background-color: rgb(213, 218, 223); padding: 6px; cursor: pointer;"] {
-    background-color: var(--body-background-color) !important;
+.rm-autocomplete__results
+  [style="display: flex; border-radius: 2px; background-color: rgb(213, 218, 223); padding: 6px; cursor: pointer;"] {
+  background-color: var(--body-background-color) !important;
 }
 
-.rm-autocomplete__results [style="display: flex; border-radius: 2px; padding: 6px; cursor: pointer; background-color: rgb(213, 218, 223);"] {
-    background-color: var(--body-background-color) !important;
+.rm-autocomplete__results
+  [style="display: flex; border-radius: 2px; padding: 6px; cursor: pointer; background-color: rgb(213, 218, 223);"] {
+  background-color: var(--body-background-color) !important;
 }
 
 /* 高亮 */
@@ -1005,7 +1009,7 @@ div[data-page-links^='["DONE"'] span:not(.check-container) {
 }
 
 .rm-block-ref:hover {
-    background-color: var(--block-reference-background-hover-color);
+  background-color: var(--block-reference-background-hover-color);
 }
 
 .rm-block-ref::before {
@@ -1277,10 +1281,6 @@ strong {
 /**************************************************************
 ********************** Right Click Menu ***********************
 ***************************************************************/
-.bp3-menu-item .bp3-menu-item-label {
-  color: var(--title-accent-color);
-}
-
 span.bp3-icon-standard,
 button {
   color: var(--empty-text-color) !important;
@@ -1373,8 +1373,8 @@ button {
   background-color: var(--popup-background-color);
 }
 
-.bp3-button.bp3-intent-primary:hover{
-    background-color: var(--template-popper-color);
+.bp3-button.bp3-intent-primary:hover {
+  background-color: var(--template-popper-color);
 }
 
 .flex-h-box > .bp3-button.bp3-minimal {
@@ -1396,7 +1396,7 @@ button {
 }
 
 .flex-h-box > .bp3-button:hover {
-    background-color: var(--template-popper-color);
+  background-color: var(--template-popper-color);
 }
 
 span.bp3-button-text {
@@ -1434,6 +1434,14 @@ span.bp3-button-text {
 }
 .rm-help-results .rm-help-categories .rm-help-category-menu-item {
   color: var(--body-text-color) !important;
+}
+.rm-help-results .rm-help-categories .rm-help-category-menu-item:hover {
+  background-color: var(--secondary-accent-color);
+  color: var(--main-background-color) !important;
+}
+.rm-help-results .rm-help-categories .rm-help-category-menu-item--selected {
+  background-color: var(--secondary-accent-color);
+  color: var(--main-background-color) !important;
 }
 .rm-help-resource__icon {
   color: var(--body-text-color) !important;
