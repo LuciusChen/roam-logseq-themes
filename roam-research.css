@@ -60,6 +60,9 @@
   /* Template popper */
   --template-popper-color: #9295a9;
   --todo-done-color: var(--empty-text-color);
+  /* Block Reference */
+  --block-reference-background-color: rgba(139, 208, 180, 0.2);
+  --block-reference-background-hover-color: rgba(139, 208, 180, 0.4);
 }
 /* -------------------------- */
 /* Custom Data Tags and Pages */
@@ -983,11 +986,11 @@ div[data-page-links^='["DONE"]'] span:not(.check-container) {
   border-bottom: none;
   cursor: pointer;
   font-family: var(--body-font) !important;
-  background-color: rgba(139, 208, 180, 0.2);
+  background-color: var(--block-reference-background-color);
 }
 
 .rm-block-ref:hover {
-  background: none !important;
+    background-color: var(--block-reference-background-hover-color);
 }
 
 .rm-block-ref::before {
@@ -1377,7 +1380,7 @@ button {
 **************************** Export All ************************
 ***************************************************************/
 .rm-modal-dialog {
-  background-color: var(--body-background-color);
+  background-color: var(--main-background-color);
 }
 
 .rm-modal-dialog .flex-h-box {
@@ -1387,6 +1390,10 @@ button {
 .bp3-button.bp3-intent-primary {
   color: var(--body-text-color) !important;
   background-color: var(--popup-background-color);
+}
+
+.bp3-button.bp3-intent-primary:hover{
+    background-color: var(--template-popper-color);
 }
 
 .flex-h-box > .bp3-button.bp3-minimal {
@@ -1405,6 +1412,10 @@ button {
   color: var(--body-text-color) !important;
   background-color: var(--popup-background-color);
   background-image: none !important;
+}
+
+.flex-h-box > .bp3-button:hover {
+    background-color: var(--template-popper-color);
 }
 
 span.bp3-button-text {

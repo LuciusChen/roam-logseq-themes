@@ -15,7 +15,7 @@
 #TODO
  - [ ] Dark Theme 细节优化
    - [x] Roam 修改 block 右击菜单匹配主题
-   - [x] Roam 调整 Block Reference 的背景以及前置`#`标识。
+   - [x] 调整 Block Reference 的背景以及前置`#`标识。
    - [x] Roam 已完成的 TODO 增加删除线并文字置灰。
    - [x] Logseq 适配手机，减少内容两边边距，展示更多内容。
  - [ ] Light Theme
