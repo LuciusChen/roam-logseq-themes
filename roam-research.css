@@ -39,7 +39,7 @@
   --primary-accent-color: var(--title-accent-color);
   --secondary-accent-color: #cdaef9;
   --secondary-accent-extra-color: rgb(203, 170, 247);
-  --sidebar-text-hover-color: rgb(226, 217, 237);
+  --sidebar-text-hover-color: rgb(234, 234, 234);
   --tertiary-accent-color: #6df2ff;
   --tertiary-accent-extra-color: #46dfff;
   --highlight-text-color: var(--search-background-color);
@@ -59,6 +59,7 @@
   --highlight-color: #e3d8fa;
   /* Template popper */
   --template-popper-color: #9295a9;
+  /* DONE Text Color*/
   --todo-done-color: var(--empty-text-color);
   /* Block Reference */
   --block-reference-background-color: rgba(139, 208, 180, 0.2);
@@ -117,10 +118,22 @@ html {
 .rm-autocomplete__results {
   background-color: var(--main-background-color);
 }
-.rm-autocomplete__results .rm-autocomplete-result {
-    color: var(--block-highlight-accent-color) !important;
+
+.rm-autocomplete__results [style="border-radius: 2px; background-color: rgb(213, 218, 223); padding: 6px; cursor: pointer;"] {
+    background-color: var(--body-background-color) !important;
 }
 
+.rm-autocomplete__results [style="border-radius: 2px; padding: 6px; cursor: pointer; background-color: rgb(213, 218, 223);"] {
+    background-color: var(--body-background-color) !important;
+}
+
+.rm-autocomplete__results [style="display: flex; border-radius: 2px; background-color: rgb(213, 218, 223); padding: 6px; cursor: pointer;"] {
+    background-color: var(--body-background-color) !important;
+}
+
+.rm-autocomplete__results [style="display: flex; border-radius: 2px; padding: 6px; cursor: pointer; background-color: rgb(213, 218, 223);"] {
+    background-color: var(--body-background-color) !important;
+}
 
 /* 高亮 */
 .rm-highlight {
@@ -719,6 +732,22 @@ span.bp3-button.bp3-minimal.bp3-small.bp3-icon-more::before {
   color: var(--zoom-path-item-color) !important;
 }
 /* Left Sidebar*/
+.roam-body
+  .roam-app
+  .roam-sidebar-container
+  .roam-sidebar-content
+  .log-button:hover,
+.roam-body
+  .roam-app
+  .roam-sidebar-container
+  .roam-sidebar-content
+  .starred-pages-wrapper
+  .starred-pages
+  .page:hover {
+  color: var(--title-accent-color) !important;
+  background-color: transparent !important;
+}
+
 .roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button,
 .roam-body
   .roam-app
@@ -855,7 +884,7 @@ span.bp3-button.bp3-minimal.bp3-small.bp3-icon-more::before {
 }
 
 .roam-body .roam-app .roam-sidebar-container {
-  /* opacity: var(--sidebar-default-opacity); */
+  opacity: var(--sidebar-default-opacity);
   transition: all 200ms ease-in-out;
   box-shadow: none !important;
 }
@@ -873,16 +902,6 @@ a:focus,
 a:hover {
   color: var(--tertiary-accent-extra-color);
   text-decoration: none !important;
-}
-
-.roam-body
-  .roam-app
-  .roam-sidebar-container
-  .roam-sidebar-content
-  .starred-pages-wrapper
-  .starred-pages
-  .page:hover {
-  color: #f5f8fa !important;
 }
 
 .bp3-button[class*="bp3-icon-"]::before {
@@ -1181,40 +1200,6 @@ span.checkmark {
   margin-top: 40px;
 }
 .CodeMirror {
-  font-size: 13px !important;
-}
-
-.roam-body
-  .roam-app
-  .roam-sidebar-container
-  .roam-sidebar-content
-  .log-button:hover,
-.roam-body
-  .roam-app
-  .roam-sidebar-container
-  .roam-sidebar-content
-  .starred-pages-wrapper
-  .starred-pages
-  .page:hover {
-  color: var(--sidebar-text-hover-color) !important;
-  background-color: transparent !important;
-}
-
-.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button,
-.roam-body
-  .roam-app
-  .roam-sidebar-container
-  .roam-sidebar-content
-  .starred-pages-wrapper,
-.roam-body
-  .roam-app
-  .roam-sidebar-container
-  .roam-sidebar-content
-  .starred-pages-wrapper
-  .starred-pages
-  .page,
-.bp3-minimal > div {
-  color: #bababa !important;
   font-size: 13px !important;
 }
 
@@ -1723,8 +1708,8 @@ span .ͼi {
   color: var(--body-text-color) !important;
 }
 /***************************************************************
-    **************************** Mobile ****************************
-    ***************************************************************/
+**************************** Mobile ****************************
+***************************************************************/
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .roam-body .roam-app .roam-main .roam-article {
     padding: 20px 30px 50px 40px;
