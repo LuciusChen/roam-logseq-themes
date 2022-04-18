@@ -91,10 +91,6 @@ span[data-link-title^="Book/"] .rm-page-ref {
   font-weight: 600;
 }
 
-div[data-page-links^="DONE"] > span {
-  color: #2decff;
-}
-
 span[data-link-title^="Online Bugs"] .rm-page-ref::before {
   content: "🐛";
 }
@@ -971,7 +967,7 @@ a:hover {
 }
 
 /* 完成的 TODO 显示删除线 */
-div[data-page-links^='["DONE"]'] span:not(.check-container) {
+div[data-page-links^='["DONE"'] span:not(.check-container) {
   text-decoration: line-through;
   color: var(--todo-done-color);
 }
