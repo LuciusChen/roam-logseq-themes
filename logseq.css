@@ -648,13 +648,11 @@
     background: var(--ct-block-reference-background-hover);
     color: var(--ct-block-reference-color-hover);
   }
-  
-  .block-ref:before {
+
+  .block-ref span[data-ref^="Online Bugs"]::before{
     content: "#";
-    color: var(--ct-block-reference-hash-color);
-    font-size: 12px;
-    vertical-align: text-bottom;
-    padding: 0 4px 0 0;
+    color: var(--ct-page-reference-color);
+    font-size: 30px;
   }
   
   .block-ref .block-ref {
@@ -968,6 +966,14 @@
   /***************************************************************
   **************************** MISC ******************************
   ***************************************************************/
+
+  .bg-indigo-600 {
+      background-color: var(--ct-page-background);
+  }
+
+  .settings-modal .form-select {
+    background-color: var(--ct-page-background) !important;
+  }
   
   textarea {
     caret-color: var(--ct-caret-color);

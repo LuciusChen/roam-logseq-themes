@@ -59,6 +59,7 @@
   --highlight-color: #e3d8fa;
   /* Template popper */
   --template-popper-color: #9295a9;
+  --todo-done-color: var(--empty-text-color);
 }
 /* -------------------------- */
 /* Custom Data Tags and Pages */
@@ -113,9 +114,14 @@ html {
   transition: all 150ms ease;
 }
 
+/* 模板弹框 */
 .rm-autocomplete__results {
   background-color: var(--main-background-color);
 }
+.rm-autocomplete__results .rm-autocomplete-result {
+    color: var(--block-highlight-accent-color) !important;
+}
+
 
 /* 高亮 */
 .rm-highlight {
@@ -534,7 +540,7 @@ div.flex-align-start > span {
 .bp3-control .bp3-control-indicator {
   box-shadow: none;
   background-color: var(--block-highlight-accent-color);
-    background-image: none;
+  background-image: none;
 }
 
 #freshworks-container {
@@ -961,6 +967,12 @@ a:hover {
   align-self: baseline;
 }
 
+/* 完成的 TODO 显示删除线 */
+div[data-page-links^='["DONE"]'] span:not(.check-container) {
+  text-decoration: line-through;
+  color: var(--todo-done-color);
+}
+
 /***************************************************************
 *********************** Block Reference ************************
 ***************************************************************/
@@ -1027,11 +1039,11 @@ body,
   background: var(--body-background-color) !important;
   -webkit-font-smoothing: antialiased;
   /* margin-top: 10px;
-    margin-right: 16px;
-    margin-left: 16px; 
-    border-left: 1px solid var(--border-color) !important;
-    border-top: 1px solid var(--border-color) !important;
-    border-right: 1px solid var(--border-color) !important; */
+        margin-right: 16px;
+        margin-left: 16px; 
+        border-left: 1px solid var(--border-color) !important;
+        border-top: 1px solid var(--border-color) !important;
+        border-right: 1px solid var(--border-color) !important; */
 }
 
 .window-headers {
@@ -1528,8 +1540,8 @@ span.bp3-icon-large {
   transition: none;
 }
 /***************************************************************
-  **************************** Roam42 ****************************
-  ***************************************************************/
+**************************** Roam42 ****************************
+***************************************************************/
 .bp3-popover-content .bp3-button[class*="bp3-icon-"]::before {
   color: var(--body-text-color);
 }
@@ -1704,8 +1716,8 @@ span .ͼi {
   color: var(--body-text-color) !important;
 }
 /***************************************************************
-**************************** Mobile ****************************
-***************************************************************/
+    **************************** Mobile ****************************
+    ***************************************************************/
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .roam-body .roam-app .roam-main .roam-article {
     padding: 20px 30px 50px 40px;
