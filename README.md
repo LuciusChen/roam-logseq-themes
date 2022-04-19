@@ -19,4 +19,5 @@
    - [x] Roam 已完成的 TODO 增加删除线并文字置灰。
    - [x] Logseq 适配手机，减少内容两边边距，展示更多内容。
    - [x] Roam 调整了 `/`（SmartBlock）及 `;;` 唤起的弹框样式，与整体风格保持一致。
+   - [x] Logseq 将 blockquote 样式改为双引号。
  - [ ] Light Theme
