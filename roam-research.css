@@ -15,7 +15,7 @@
   --cmt-comment-color: rgb(127, 132, 142);
   --cmt-def-color: rgb(209, 154, 102);
   --cmt-keyword-color: rgb(51, 211, 72);
-  --cmt-propertyName-color: rgb(228, 236, 255);
+  --cmt-propertyName-color: rgb(120, 160, 252);
   --cmt-typeName-color: rgb(255, 80, 80);
   --cmt-variableName-color: var(--cmt-typeName-color);
   --cmt-number-color: rgb(255, 169, 71);
@@ -179,6 +179,16 @@ html {
   color: var(--secondary-accent-color);
   font-weight: bold;
 }
+
+.rm-bq::after {
+    position: absolute;
+    content: "\201D";
+    font-size: 33px;
+    right: 23px;
+    margin-top: 20px;
+    color: var(--secondary-accent-color);
+    font-weight: bold;
+  }
 
 .rm-paren {
   background-color: var(--secondary-accent-extra-color) !important;

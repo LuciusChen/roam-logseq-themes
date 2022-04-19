@@ -349,10 +349,31 @@ a.bg-base-2.px-1.ml-1.mr-3:hover {
 
 blockquote {
   background: var(--ct-quote-background);
-  border-left: var(--ct-quote-border-left);
+  /* border-left: var(--ct-quote-border-left); */
+  border-left: 0;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
-  color: var(--ct-quote-font-color, var(--ct-page-font-color));
+  /* color: var(--ct-quote-font-color, var(--ct-page-font-color)); */
+}
+
+blockquote::before {
+  position: absolute;
+  content: "\201C";
+  font-size: 33px;
+  margin-left: -20px;
+  margin-top: -9px;
+  color: var(--ct-page-reference-color);
+  font-weight: bold;
+}
+
+blockquote::after {
+  position: absolute;
+  right: 16px;
+  content: "\201D";
+  font-size: 33px;
+  margin-top: -22px;
+  color: var(--ct-page-reference-color);
+  font-weight: bold;
 }
 
 /* page embed */
@@ -650,7 +671,7 @@ a.tag:hover {
   color: var(--ct-block-reference-color-hover);
 }
 
-.block-ref span[data-ref^="Online Bugs"]::before {
+.block-ref span.inline::before {
   content: "#";
   color: var(--ct-page-reference-color);
   font-size: 30px;
@@ -760,7 +781,14 @@ strong {
 .foldable-title .page-ref:hover {
   color: var(--ct-query-result-page-title-hover);
 }
-
+.block-properties {
+  background-color: var(--background);
+}
+/* All Pages 表头部上移*/
+.cp__all_pages .actions {
+  background-color: var(--ct-background);
+  top: -16px;
+}
 /***************************************************************
 ************************ Plugin Market *************************
 ***************************************************************/
@@ -919,7 +947,8 @@ strong {
 
 .cp__right-sidebar blockquote {
   background: var(--ct-sidebar-quote-background);
-  border-left: var(--ct-sidebar-quote-border-left);
+  /* border-left: var(--ct-sidebar-quote-border-left); */
+  border-left: 0;
 }
 
 /* page embed */
@@ -1416,7 +1445,7 @@ span[data-ref^="Go Live"] .page-ref::before {
   .cp__sidebar-main-content > div {
     padding: 0px;
   }
-  .cp__sidebar-main-content{
+  .cp__sidebar-main-content {
     padding: 0px;
   }
 }
@@ -1886,8 +1915,8 @@ html[data-theme="dark"] {
   --ct-settings-overlay-background: var(--ct-page-properties-background);
   --ct-settings-background: linear-gradient(
     105deg,
-    rgb(33 29 40) 0%,
-    rgb(33 29 43) 100%
+    var(--ct-page-background) 0%,
+    var(--left-sidebar-color) 100%
   );
   --ct-settings-switcher-background: var(--ls-scrollbar-foreground-color);
   --ct-settings-select-background: var(--ls-scrollbar-foreground-color);
@@ -1933,7 +1962,7 @@ html[data-theme="dark"] {
 ***************************************************************/
 :root {
   --ls-block-bullet-active-color: var(--ls-link-text-color);
-  --ls-guideline-color: var(--ct-bullet-color);
+  /* --ls-guideline-color: var(--ct-bullet-color); */
   --ls-block-bullet-color: var(--ct-bullet-closed-color);
   --ls-block-bullet-threading-width-overwrite: 2px;
   --ls-block-bullet-threading-width: var(
@@ -1947,7 +1976,7 @@ html[data-theme="dark"] {
 }
 
 .block-children {
-  border-left-color: var(--ls-guideline-color) !important;
+  /* border-left-color: var(--ls-guideline-color) !important; */
   border-left-width: var(--ls-block-bullet-threading-width) !important;
 }
 
