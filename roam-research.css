@@ -35,13 +35,13 @@
   --black-text: #222222;
   --empty-text-color: #9da5b4;
   --sidebar-base-text-color: #9da5b4;
-  --title-accent-color: #50fa7b;
+  --title-accent-color: rgb(51, 211, 72);
   --primary-accent-color: var(--title-accent-color);
   --secondary-accent-color: #cdaef9;
   --secondary-accent-extra-color: rgb(203, 170, 247);
   --sidebar-text-hover-color: rgb(234, 234, 234);
   --tertiary-accent-color: #6df2ff;
-  --tertiary-accent-extra-color: #46dfff;
+  --tertiary-accent-extra-color: #50fa7b;
   --highlight-text-color: var(--search-background-color);
   --highlight-background-color: var(--secondary-accent-extra-color);
   --sidebar-container-title-color: rgba(167, 182, 194, 0.1);
@@ -181,14 +181,14 @@ html {
 }
 
 .rm-bq::after {
-    position: absolute;
-    content: "\201D";
-    font-size: 33px;
-    right: 23px;
-    margin-top: 20px;
-    color: var(--secondary-accent-color);
-    font-weight: bold;
-  }
+  position: absolute;
+  content: "\201D";
+  font-size: 33px;
+  right: 23px;
+  margin-top: 20px;
+  color: var(--secondary-accent-color);
+  font-weight: bold;
+}
 
 .rm-paren {
   background-color: var(--secondary-accent-extra-color) !important;
@@ -278,8 +278,17 @@ svg {
   color: var(--main-background-color);
 }
 
+.bp3-popover-wrapper .bp3-button:not([class*="bp3-intent-"]) {
+  background-color: var(--body-background-color) !important;
+  background-image: none;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: all 200ms ease-in-out;
+  box-shadow: none !important;
+}
+
 .bp3-popover-content .bp3-button:not([class*="bp3-intent-"]) {
-  background-color: var(--body-background-color);
+  background-color: var(--body-background-color) !important;
   background-image: none;
   border-radius: 6px;
   font-size: 13px;
@@ -1307,7 +1316,10 @@ button {
 [style="margin: 0px 2px; padding: 4px 8px; border-radius: 2px; background-color: white; border: 0.5px solid rgb(206, 217, 224);"] {
   background-color: var(--popup-background-color) !important;
 }
-
+/* 头部工具栏 */
+.rm-files-dropzone {
+  background-color: var(--body-background-color);
+}
 /***************************************************************
 **************************** Kanban ****************************
 ***************************************************************/
@@ -1389,7 +1401,7 @@ button {
 
 .flex-h-box > .bp3-button.bp3-minimal {
   color: var(--body-text-color) !important;
-  background-color: var(--popup-background-color);
+  background-color: var(--main-background-color);
 }
 
 .bp3-html-select select,
@@ -1606,6 +1618,7 @@ code {
   border: none;
   padding: 2px 3px;
   opacity: 90%;
+  font-style: italic;
 }
 /* 代码块背景 */
 .cm-gutters {
@@ -1733,6 +1746,9 @@ span .ͼi {
     padding: 20px 30px 50px 40px;
   }
 
+  .rm-topbar {
+    height: 36px;
+  }
   .roam-center,
   .roam-body .roam-app .roam-body-main {
     margin-top: 10px;

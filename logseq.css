@@ -813,6 +813,11 @@ strong {
 ************************ RIGHT SIDEBAR *************************
 ***************************************************************/
 
+/* 去除下端阴影 */
+.shadow-lg {
+  box-shadow: none;
+}
+
 .cp__header-logo,
 .fade-link {
   color: var(--ls-link-text-color);
@@ -1390,6 +1395,29 @@ span[data-ref^="Go Live"] .page-ref::before {
 /***************************************************************
 ****************************************************************
 ****************************************************************
+************************ Date Picker ***************************
+****************************************************************
+****************************************************************
+***************************************************************/
+.datepicker {
+  background-color: var(--ct-sidebar-background);
+}
+
+.datepicker th.day-enabled,
+label.day-enabled {
+  color: var(--ct-page-font-color);
+}
+.datepicker th.month {
+  color: var(--ct-page-font-color);
+}
+.table-wrapper thead th,
+.cp__sidebar-help-docs table thead th,
+.flex-1 table thead th {
+  border: 0;
+}
+/***************************************************************
+****************************************************************
+****************************************************************
 **************************** MOBILE ****************************
 ****************************************************************
 ****************************************************************
@@ -1447,6 +1475,9 @@ span[data-ref^="Go Live"] .page-ref::before {
   }
   .cp__sidebar-main-content {
     padding: 0px;
+  }
+  .cp__all_pages .actions {
+    background-color: var(--ct-background);
   }
 }
 
@@ -1723,7 +1754,7 @@ html[data-theme="dark"] {
   --ls-link-ref-text-color: var(--ct-page-reference-color);
   --ls-link-ref-text-hover-color: var(--ct-page-reference-color-hover);
   --ls-primary-text-color: var(--ct-page-font-color);
-  --ct-background: #353846;
+  --ct-background: #2d303c;
   --ls-primary-background-color: #332c46;
   --ct-desktop-nav-buttons-color: #3a3344;
   --ls-scrollbar-foreground-color: #395c64;
@@ -1736,7 +1767,7 @@ html[data-theme="dark"] {
   --ct-search-field-text-color: #d5d5d5;
   --ct-page-background: var(--ct-background);
   --ct-page-box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.3);
-  --ct-page-font-color: #cec5ba;
+  --ct-page-font-color: #f5f5f5;
   --ct-page-title-color: #d2bea4;
   --ct-page-title-text-shadow: none;
   --ct-heading-color: var(--ct-page-title-color);
@@ -1969,10 +2000,6 @@ html[data-theme="dark"] {
     --ls-block-bullet-threading-width-overwrite,
     1px
   );
-}
-
-.block-control {
-  z-index: -1;
 }
 
 .block-children {
