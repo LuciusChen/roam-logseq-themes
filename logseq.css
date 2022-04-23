@@ -1,10 +1,6 @@
 /* 修改自 https://github.com/PiotrSss/logseq-clean-themes */
 /***************************************************************
-****************************************************************
-****************************************************************
 ****************************** MAIN ****************************
-****************************************************************
-****************************************************************
 ***************************************************************/
 
 :root {
@@ -63,7 +59,7 @@
   --ct-inline-code-font-style: italic;
   --ct-inline-code-border-radius: 2px;
   --ct-inline-code-padding: 4px 5px 2px 5px;
-  --ct-sidebar-item-border: none;
+  --ct-sidebar-item-border: dashed 2px var(--ct-journal-border-color);
   --ct-sidebar-item-border-radius: 5px;
   --ct-sidebar-title-font-family: var(--ct-page-title-font-family);
   /* Code */
@@ -448,7 +444,7 @@ blockquote::after {
 .canceled,
 .done {
   color: var(--ct-task-done-text-color);
-  text-decoration: var(--ct-task-done-text-decoration);
+  /* text-decoration: var(--ct-task-done-text-decoration); */
 }
 
 /* scheduled and deadline */
@@ -671,11 +667,10 @@ a.tag:hover {
   color: var(--ct-block-reference-color-hover);
 }
 
-.block-ref span.inline::before {
-  content: "#";
+/* .block-ref span.inline::before {
+  content: "# ";
   color: var(--ct-page-reference-color);
-  font-size: 30px;
-}
+} */
 
 .block-ref .block-ref {
   padding: var(--ct-block-reference-padding-inside-another);
@@ -859,7 +854,7 @@ strong {
 }
 
 .cp__right-sidebar .sidebar-item {
-  border: var(--ct-sidebar-item-border);
+  border-bottom: var(--ct-sidebar-item-border);
   padding: 15px;
   border-radius: var(--ct-sidebar-item-border-radius);
   background: var(--ct-sidebar-item-background);
@@ -1249,13 +1244,8 @@ tr {
 }
 
 /***************************************************************
-****************************************************************
-****************************************************************
 ************************** CODE BLOCKS *************************
-****************************************************************
-****************************************************************
 ***************************************************************/
-
 html[data-theme="dark"] .CodeMirror {
   font-family: "FiraCode Nerd Font", "Fire Code", monospace;
   line-height: 1.2;
@@ -1273,6 +1263,7 @@ html[data-theme="dark"] .CodeMirror .CodeMirror-gutters {
 }
 
 html[data-theme="dark"] .extensions__code-lang {
+  display: none;
   background: var(--light-background);
 }
 
@@ -1377,28 +1368,38 @@ html[data-theme="dark"] .CodeMirror .CodeMirror-matchingbracket {
 html[data-theme="dark"] #right-sidebar pre.CodeMirror-line {
   background: transparent;
 }
+.extensions__code .code-editor {
+  margin-top: 5px;
+}
 /***************************************************************
-****************************************************************
-****************************************************************
-****************** Custom Data Tags and Pages ******************
-****************************************************************
-****************************************************************
+****************** Custom Setting ******************
 ***************************************************************/
 span[data-ref^="Online Bugs"] .page-ref::before {
   content: "🐛";
 }
 
-span[data-ref^="Go Live"] .page-ref::before {
+span[data-ref^="Go Live"] .page-ref::after {
   content: "🚀";
 }
 
+span[data-ref^="Fixed"] .page-ref::after {
+  content: "🎉";
+}
+/* Youtube Embed */
+iframe[id^='youtube-player'] {
+  height: 200px !important;
+  width: 400px !important;
+}
+div.ls-wide-mode iframe[id^='youtube-player'] {
+  height: 500px !important;
+  width: 100% !important;
+}
 /***************************************************************
-****************************************************************
-****************************************************************
 ************************ Date Picker ***************************
-****************************************************************
-****************************************************************
 ***************************************************************/
+div.absolute.rounded-md.shadow-lg.absolute-modal.origin-top-left.transition.opacity-100.transform.scale-100 {
+  max-height: max-content !important;
+}
 .datepicker {
   background-color: var(--ct-sidebar-background);
 }
@@ -1416,11 +1417,7 @@ label.day-enabled {
   border: 0;
 }
 /***************************************************************
-****************************************************************
-****************************************************************
-**************************** MOBILE ****************************
-****************************************************************
-****************************************************************
+*************************** Mobile *****************************
 ***************************************************************/
 
 .is-mobile #head.cp__header {
@@ -1477,16 +1474,16 @@ label.day-enabled {
     padding: 0px;
   }
   .cp__all_pages .actions {
-    background-color: var(--ct-background);
+    top: 0px;
   }
 }
+/***************************************************************
+**************************** Plugin ****************************
+***************************************************************/
+
 
 /***************************************************************
-****************************************************************
-****************************************************************
 **************************** Light5 ****************************
-****************************************************************
-****************************************************************
 ***************************************************************/
 
 .white-theme,
@@ -1736,18 +1733,25 @@ html[data-theme="light"] {
 }
 
 /***************************************************************
-****************************************************************
-****************************************************************
 **************************** Dark 5 ****************************
-****************************************************************
-****************************************************************
 ***************************************************************/
 
 .dark-theme,
 html[data-theme="dark"] {
   --left-sidebar-color: #292b35;
+  --ls-table-tr-even-background-color: rgb(
+    88,
+    82,
+    118,
+    0.4
+  ); /* table even background color */
+  --ls-secondary-background-color: var(
+    --ls-table-tr-even-background-color
+  ); /* Marketplace Tab */
   --ls-tertiary-background-color: var(--ct-page-references-background);
-  --ls-quaternary-background-color: #3d4050;
+  --ls-quaternary-background-color: var(
+    --ls-scrollbar-foreground-color
+  ); /* 搜索框搜索内容选中颜色 */
   --ls-search-icon-color: var(--ct-page-reference-color);
   --ls-link-text-color: var(--ct-page-reference-color);
   --ls-link-text-hover-color: #6bcc77;
@@ -1755,10 +1759,10 @@ html[data-theme="dark"] {
   --ls-link-ref-text-hover-color: var(--ct-page-reference-color-hover);
   --ls-primary-text-color: var(--ct-page-font-color);
   --ct-background: #2d303c;
-  --ls-primary-background-color: #332c46;
+  --ls-primary-background-color: var(--ct-background);
   --ct-desktop-nav-buttons-color: #3a3344;
-  --ls-scrollbar-foreground-color: #395c64;
-  --ls-scrollbar-background-color: var(--ls-primary-background-color);
+  --ls-scrollbar-foreground-color: #303f43;
+  --ls-scrollbar-background-color: #3a3344;
   --ct-logo-color: #665b86;
   --ct-repo-name-color: var(--ct-page-reference-color);
   --ct-top-right-3dots-icon-color: var(--ct-desktop-nav-buttons-color);
@@ -1775,7 +1779,7 @@ html[data-theme="dark"] {
   --ct-title-3dots-icon-color: rgba(91, 74, 66, 0.7);
   --ct-file-path-color: #698c82;
   --ct-file-path-color-hover: #a2c4ba;
-  --ct-page-references-background: rgba(22 20 31 / 40%);
+  --ct-page-references-background: rgba(22, 22, 24, 0.4);
   --ct-page-references-border: 1px solid var(--ct-page-references-background);
   --ct-page-properties-background: var(--ct-background);
   --ct-hr-border-top: 1px dashed var(--ct-title-3dots-icon-color);
@@ -1797,15 +1801,15 @@ html[data-theme="dark"] {
   --ct-block-references-count-color-hover: #5d5d5d;
   --ct-block-references-count-background-hover: rgb(240 228 218);
   --ct-checkbox-border-color: #57ad95;
-  --ct-checkbox-border-color-checked: #57ad95;
+  --ct-checkbox-border-color-checked: var(--ct-checkbox-border-color);
   --ct-checkbox-background-color: transparent;
-  --ct-checkbox-background-color-checked: #57ad95;
+  --ct-checkbox-background-color-checked: var(--ct-checkbox-border-color);
   --ct-checkbox-doing-border-color: #ec7b7b;
   --ct-checkbox-doing-background-color: var(--ct-checkbox-background-color);
-  --ct-checkbox-marker-switch-color: #57ad95;
+  --ct-checkbox-marker-switch-color: var(--ct-checkbox-border-color);
   --ct-checkbox-doing-marker-switch-color: #ec7b7b;
   --ct-task-done-text-color: #8e8e8e;
-  --ct-scheduled-or-deadline-color: #57ad95;
+  --ct-scheduled-or-deadline-color: var(--ct-checkbox-border-color);
   --ct-scheduled-or-deadline-color-hover: #7cceb7;
   --ct-external-link-text-decoration: none;
   --ct-external-link-text-decoration-hover: none;
@@ -1837,8 +1841,8 @@ html[data-theme="dark"] {
   --ct-page-reference-background-hover: var(--ct-page-properties-background);
   --ct-page-reference-brackets-color: #76718a;
   --ct-page-reference-brackets-color-hover: #76718a;
-  --ct-page-reference-color: #79ff8a;
-  --ct-page-reference-color-hover: #f2cfa3;
+  --ct-page-reference-color: #6bcc77;
+  --ct-page-reference-color-hover: #79ff8a;
   --ct-page-reference-inside-page-references-color: var(
     --ct-page-reference-color
   );
@@ -1881,7 +1885,7 @@ html[data-theme="dark"] {
   --ct-block-reference-color: var(--ct-page-font-color);
   --ct-block-reference-color-hover: var(--ct-page-font-color);
   --ct-block-reference-hash-color: #57ad95;
-  --ct-mark-background: rgb(203, 170, 247);
+  --ct-mark-background: rgb(151, 217, 196, 1);
   --ct-mark-color: #353846;
   --ct-italics-color: inherit;
   --ct-bold-color: #fff;
@@ -1924,11 +1928,13 @@ html[data-theme="dark"] {
   --ct-block-selected-border-bottom-color: #1e1b26;
   --ct-menu-dropdown-background: #292b35;
   --ct-menu-dropdown-color: var(--ct-page-font-color);
-  --ct-menu-dropdown-hover-color: #565068;
+  --ct-menu-dropdown-hover-color: var(
+    --ls-scrollbar-foreground-color
+  ); /* 搜索框搜索内容 hover 颜色 */
   --ct-menu-focused-by-keyboard: #4b4753;
   --ct-journal-border-height: 2px;
   --ct-journal-border-style: dashed;
-  --ct-journal-border-color: #42332c;
+  --ct-journal-border-color: #3a5f6c;
   --ct-slides-font-color: var(--ct-sidebar-font-color);
   --ct-slides-background: var(--ct-sidebar-item-background);
   --ct-code-block-background: #2f2d35;
@@ -1946,8 +1952,8 @@ html[data-theme="dark"] {
   --ct-settings-overlay-background: var(--ct-page-properties-background);
   --ct-settings-background: linear-gradient(
     105deg,
-    var(--ct-page-background) 0%,
-    var(--left-sidebar-color) 100%
+    var(--left-sidebar-color) 0%,
+    var(--ls-scrollbar-foreground-color) 100%
   );
   --ct-settings-switcher-background: var(--ls-scrollbar-foreground-color);
   --ct-settings-select-background: var(--ls-scrollbar-foreground-color);

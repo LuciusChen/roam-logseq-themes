@@ -21,4 +21,5 @@
    - [x] Roam 调整了 `/`（SmartBlock）及 `;;` 唤起的弹框样式，与整体风格保持一致。
    - [x] Logseq 将 blockquote 样式改为双引号。
    - [x] Logseq 将 Date Picker 样式改为和主题一致配色。
+   - [X] Logseq 修改搜索框背景，选中悬停颜色，区分于软件整理的背景颜色。
  - [ ] Light Theme
