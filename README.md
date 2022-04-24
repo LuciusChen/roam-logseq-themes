@@ -22,4 +22,5 @@
    - [x] Logseq 将 blockquote 样式改为双引号。
    - [x] Logseq 将 Date Picker 样式改为和主题一致配色。
    - [X] Logseq 修改搜索框背景，选中悬停颜色，区分于软件整理的背景颜色。
+   - [ ] 增加对 Zettlekasten 方法论实践一些标签的特殊样式。
  - [ ] Light Theme

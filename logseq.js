@@ -15,11 +15,10 @@ const throttle = (func, limit) => {
 const watchTarget = document.getElementById("app-container");
 // comments =============================================
 function hideCommentsRoute() {
-  console.info("====== Comments =====");
   let comments = document.querySelectorAll(
     'a.page-ref[data-ref*="comments"]:not(.hidden-source)'
   );
-  console.log(comments);
+
   for (var i = 0; i < comments.length; i++) {
     let ref =
       comments[i].parentNode.parentNode.parentNode.parentNode.parentNode;
