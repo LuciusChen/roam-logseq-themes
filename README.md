@@ -3,9 +3,11 @@
 ## Roam
 ![](Snipaste_2022-04-17_10-52-33.png)
 ![](Snipaste_2022-04-17_11-13-10.png)
+![](Snipaste_2022-04-25_22-14-08.png)
 
 ## Logseq
 ![](Snipaste_2022-04-17_14-47-32.png)
+![](Snipaste_2022-04-25_22-14-25.png)
 
 ## 特点
 1. 所有页面或者弹窗统一风格。
@@ -22,5 +24,7 @@
    - [x] Logseq 将 blockquote 样式改为双引号。
    - [x] Logseq 将 Date Picker 样式改为和主题一致配色。
    - [X] Logseq 修改搜索框背景，选中悬停颜色，区分于软件整理的背景颜色。
+   - [x] Roam 和 Logseq 增加`Permanent Notes`、`Literature Notes`、`Reference Notes` 和 `Fleeting Notes` 样式。
    - [ ] 增加对 Zettlekasten 方法论实践一些标签的特殊样式。
+
  - [ ] Light Theme
