@@ -1507,7 +1507,7 @@ span.page-reference[data-ref="Reference Notes"]::before {
 
 /* Permanent Notes */
 span.page-reference[data-ref="Permanent Notes"] .page-ref {
-  color: var(--ls-primary-text-color) !important;
+  color: var(--ls-primary-background-color) !important;
 }
 
 span.page-reference[data-ref="Permanent Notes"] .bracket {
