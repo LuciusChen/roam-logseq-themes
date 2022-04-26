@@ -30,7 +30,7 @@
    - [x] 将 blockquote 样式改为双引号。
    - [x] 将 Date Picker 样式改为和主题一致配色。
    - [x] 修改搜索框背景，选中悬停颜色，区分于软件整理的背景颜色。
-   - [x] 增加`Permanent Notes`、`Literature Notes`、`Reference Notes` 和 `Fleeting Notes` 样式。
+   - [x] 增加`Permanent Notes`、`Literature Notes`、`Reference Notes` 和 `Fleeting Notes` 样式，并增加悬停效果，包括前置图标。
    - [x] 修改标签默认样式
    - [x] 修改 `WAITTING`、`LATER`、`TODO`、`NOW`、`DOING` 样式。
    - [x] `custom.js` 增加对 `namespaces` 的隐藏，例如 `APP/Obsidian` 省略后 `.../Obsidian`。
