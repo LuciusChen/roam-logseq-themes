@@ -35,3 +35,6 @@
    - [x] 修改 `WAITTING`、`LATER`、`TODO`、`NOW`、`DOING` 样式。
    - [x] `custom.js` 增加对 `namespaces` 的隐藏，例如 `APP/Obsidian` 省略后 `.../Obsidian`。
    - [x] `custom.js` 增加对 [logseq-plugin-comment-block](https://github.com/vipzhicheng/logseq-plugin-comment-block) 展示修改，该插件在 siderbar 中被评价内容显示重复。
+
+### Light Theme
+   - [x] 大致调整了一下颜色搭配，大致可以用了，细节待完善。
