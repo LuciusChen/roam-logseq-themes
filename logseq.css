@@ -1767,8 +1767,8 @@ html[data-theme="light"] {
   --ls-scrollbar-foreground-color: #d9e6d6;
   --ls-scrollbar-background-color: #fafafa;
   --ct-logo-color: #5d5d5d;
-  --ct-repo-name-color: #a6a6a6;
-  --ct-top-right-3dots-icon-color: #a6a6a6;
+  --ct-repo-name-color: var(--ct-page-reference-color);
+  --ct-top-right-3dots-icon-color: var(--ct-page-reference-color);
   --ct-search-icon-color: #638445;
   --ct-search-field-background: #f1f1f1;
   --ct-search-field-background-focus: #f1f1f1;
@@ -1783,7 +1783,7 @@ html[data-theme="light"] {
   --ct-title-3dots-icon-color: #a6a6a6;
   --ct-file-path-color: #909d74;
   --ct-file-path-color-hover: #a0ae83;
-  --ct-page-references-background: #f1f1f1;
+  --ct-page-references-background: #d9e6d6;
   --ct-page-references-border: none;
   --ct-page-properties-background: #eee;
   --ct-hr-border-top: 1px solid #d2d2d2;
@@ -1917,10 +1917,10 @@ html[data-theme="light"] {
   --ct-sidebar-resizer-background: none;
   --ct-sidebar-resizer-background-hover: #e1e1e1;
   --ct-sidebar-background: none;
-  --ct-sidebar-tabs-color: #9c9c9c;
+  --ct-sidebar-tabs-color: var(--ct-page-reference-color);
   --ct-sidebar-close-arrow-color: #9c9c9c;
   --ct-sidebar-font-color: var(--ct-page-font-color);
-  --ct-sidebar-item-background: #f4f4f4;
+  --ct-sidebar-item-background: var(--ct-background);
   --ct-sidebar-item-box-shadow: none;
   --ct-sidebar-item-title-color: #575757;
   --ct-sidebar-item-title-text-shadow: var(--ct-page-title-text-shadow);
@@ -2009,6 +2009,10 @@ html[data-theme="light"] #journals .journal-item:first-child {
 
 html[data-theme="light"] #journals .journal-item {
   margin-bottom: 0;
+}
+
+html[data-theme=light] .cp__header a {
+  color: var(--ct-page-reference-color);
 }
 
 /***************************************************************
