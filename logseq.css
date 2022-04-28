@@ -1,4 +1,5 @@
 /* 修改自 https://github.com/PiotrSss/logseq-clean-themes */
+/* icon 来自 https://tabler-icons.io */
 /***************************************************************
 ****************************** MAIN ****************************
 ***************************************************************/
@@ -1916,7 +1917,7 @@ html[data-theme="light"] {
   --ct-calendar-day-color-hover: var(--ct-page-reference-color-hover);
   --ct-sidebar-resizer-background: none;
   --ct-sidebar-resizer-background-hover: #e1e1e1;
-  --ct-sidebar-background: none;
+  --ct-sidebar-background: var(--left-sidebar-color);
   --ct-sidebar-tabs-color: var(--ct-page-reference-color);
   --ct-sidebar-close-arrow-color: #9c9c9c;
   --ct-sidebar-font-color: var(--ct-page-font-color);
