@@ -670,9 +670,8 @@ button.bp3-button.bp3-small.bp3-minimal.block-ref-count-button {
   padding-right: 0px;
   font-size: 13px;
   font-weight: 600;
-  margin-left: -13px;
   text-align: center;
-  opacity: 0;
+  opacity: 1;
   transition: all 200ms ease-in-out;
 }
 
