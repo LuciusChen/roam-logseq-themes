@@ -182,6 +182,33 @@ a.chosen {
 /***************************************************************
 ************************** MAIN AREA ***************************
 ***************************************************************/
+.journal-item h1.title::before {
+  content: "\ea53";
+  font-family: tabler-icons;
+  margin-right: 3px;
+  font-weight: 100;
+}
+
+/* TITLE MARKUPS */
+h1.title[data-ref^="apr "]:before,
+h1.title[data-ref^="mar "]:before,
+h1.title[data-ref^="feb "]:before,
+h1.title[data-ref^="jan "]:before,
+h1.title[data-ref^="may "]:before,
+h1.title[data-ref^="jun "]:before,
+h1.title[data-ref^="jul "]:before,
+h1.title[data-ref^="aug "]:before,
+h1.title[data-ref^="sep "]:before,
+h1.title[data-ref^="oct "]:before,
+h1.title[data-ref^="nov "]:before,
+h1.title[data-ref^="dec "]:before {
+  content: "\ea53";
+  font-family: "tabler-icons";
+  margin-right: 5px;
+  font-weight: 100;
+  position: relative;
+  top: 1px;
+}
 
 .cp__sidebar-main-content {
   padding: 1.5rem;
@@ -239,7 +266,7 @@ hr {
 h1.title {
   font-family: var(--ct-page-title-font-family);
   font-size: var(--ct-page-title-font-size);
-  font-weight: 400;
+  font-weight: 800;
   font-style: var(--ct-page-title-font-style);
   color: var(--ct-page-reference-color);
   line-height: var(--ct-page-title-line-height);
@@ -346,14 +373,13 @@ a.bg-base-2.px-1.ml-1.mr-3:hover {
 
 blockquote {
   background: var(--ct-quote-background);
-  /* border-left: var(--ct-quote-border-left); */
-  border-left: 0;
+  border-left: var(--ct-quote-border-left);
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
-  /* color: var(--ct-quote-font-color, var(--ct-page-font-color)); */
+  color: var(--ct-quote-font-color, var(--ct-page-font-color));
 }
 
-blockquote::before {
+/* blockquote::before {
   position: absolute;
   content: "\201C";
   font-size: 33px;
@@ -371,7 +397,7 @@ blockquote::after {
   margin-top: -22px;
   color: var(--ct-page-reference-color);
   font-weight: bold;
-}
+} */
 
 /* page embed */
 
@@ -468,26 +494,23 @@ blockquote::after {
   font-weight: 900;
 }
 
-.block-marker:hover {
+.block-marker:not(.waiting):hover,
+.block-marker.NOW:hover,
+.block-marker.DOING:hover {
   border-color: var(--ct-mark-background);
   background-color: var(--ct-mark-background);
   color: var(--ct-inline-code-color);
   opacity: 1;
 }
 
-.block-marker.NOW,.block-marker.DOING {
+.block-marker.NOW,
+.block-marker.DOING {
   border-color: var(--ct-inline-code-background);
   background-color: var(--ct-inline-code-background);
   color: var(--ct-inline-code-color);
   opacity: 1;
 }
 
-.block-marker.NOW:hover, .block-marker.DOING:hover {
-  border-color: var(--ct-mark-background);
-  background-color: var(--ct-mark-background);
-  color: var(--ct-inline-code-color);
-  opacity: 1;
-}
 /* scheduled and deadline */
 
 .text-sm.mt-1.flex.flex-row a.opacity-80 {
@@ -853,19 +876,19 @@ strong {
 }
 
 .cp__sidebar-left-layout a {
-  color: var(--ct-page-reference-color);
+  color: var(--ct-page-font-color);
 }
 
 .left-sidebar-inner a.item:hover {
-  color: var(--ct-page-reference-color-hover);
+  color: var(--ct-page-font-color);
   background-color: var(--ct-inline-code-background);
 }
 
-.left-sidebar-inner .nav-content-item>.bd ul a {
-  color: var(--ct-page-reference-color);
+.left-sidebar-inner .nav-content-item > .bd ul a {
+  color: var(--ct-page-font-color);
 }
 
-.left-sidebar-inner .nav-content-item>.bd ul a:hover {
+.left-sidebar-inner .nav-content-item > .bd ul a:hover {
   color: var(--ct-page-reference-color-hover);
   background-color: var(--ct-inline-code-background);
 }
@@ -1439,10 +1462,6 @@ html[data-theme="dark"] #right-sidebar pre.CodeMirror-line {
 /***************************************************************
 ****************** Custom Setting ******************
 ***************************************************************/
-span[data-ref^="Online Bugs"] .page-ref::before {
-  content: "🐛";
-}
-
 span[data-ref^="Go Live"] .page-ref::after {
   content: "🚀";
 }
@@ -1460,199 +1479,88 @@ div.ls-wide-mode iframe[id^="youtube-player"] {
   width: 100% !important;
 }
 
-/* FLEETING NOTES */
-span.page-reference[data-ref="Fleeting Notes"] 
-{ background: var(--ls-primary-background-color);
+span.page-reference[data-ref="Permanent Notes"],
+span.page-reference[data-ref="Literature Notes"],
+span.page-reference[data-ref="Reference Notes"],
+span.page-reference[data-ref="Fleeting Notes"],
+span.page-reference[data-ref="Online Bugs"] {
+  background: var(--ls-primary-background-color);
   background-size: 100%;
   color: var(--ls-primary-text-color);
   padding: 2px 5px 2px 5px;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1em;
-  font-weight: 500;
+  font-weight: 700;
   border-radius: 5px 5px 5px 5px;
   border-style: solid;
   border-color: var(--ls-link-ref-text-color);
   border-width: thin;
-  position:relative;
-}
-span.page-reference[data-ref="Fleeting Notes"] .bracket {
-  display: none;
-}
-span.page-reference[data-ref="Fleeting Notes"]::before {
-  background-color:                 var(--ls-link-ref-text-color);
-  content:                          "";
-  display:                          inline-block;
-  position:                         relative;
-  bottom:                           -3px;
-  left:                             -2px;
-  margin:                           -13px 2px 0px 0px;
-  width:                            1.1rem;
-  -webkit-mask-box-image:           url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-flare' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Ccircle cx='12' cy='12' r='2' /%3E%3Cpath d='M3 12h4m5 -9v4m5 5h4m-9 5v4m-4.5 -13.5l1 1m8 -1l-1 1m0 7l1 1m-8 -1l-1 1' /%3E%3C/svg%3E");
-  height:                           1.0rem;
+  position: relative;
 }
 
-span.page-reference[data-ref="Fleeting Notes"]:hover::before {
-  background-color: var(--ls-link-ref-text-hover-color);
+.bracket {
+  display: none !important;
 }
 
+span.page-reference[data-ref="Permanent Notes"]:hover::before,
+span.page-reference[data-ref="Literature Notes"]:hover::before,
+span.page-reference[data-ref="Reference Notes"]:hover::before,
+span.page-reference[data-ref="Fleeting Notes"]:hover::before,
+span.page-reference[data-ref="Online Bugs"]:hover::before {
+  color: var(--ls-link-ref-text-hover-color);
+}
+
+span.page-reference[data-ref="Permanent Notes"]::before,
+span.page-reference[data-ref="Literature Notes"]::before,
+span.page-reference[data-ref="Reference Notes"]::before,
+span.page-reference[data-ref="Fleeting Notes"]::before,
+span.page-reference[data-ref="Online Bugs"]::before {
+  color: var(--ls-link-ref-text-color);
+  font-family: "tabler-icons";
+  font-size: large;
+  font-weight: lighter;
+  display: inline-block;
+  position: relative;
+  bottom: -2px;
+  left: -2px;
+}
+
+h1.title[data-ref^="permanent notes"]::before,
+h1.title[data-ref^="fleeting notes"]::before,
+h1.title[data-ref^="literature notes"]::before,
+h1.title[data-ref^="reference notes"]::before,
+h1.title[data-ref^="online bugs"]::before {
+  color: var(--ls-link-ref-text-color);
+  font-family: "tabler-icons";
+  bottom: -2px;
+  left: -2px;
+  font-weight: 100;
+}
+
+/* Permanent NOTES */
+span.page-reference[data-ref="Permanent Notes"]::before,
+h1.title[data-ref^="permanent notes"]::before {
+  content: "\eb96";
+}
+/* Fleeting NOTES */
+span.page-reference[data-ref="Fleeting Notes"]::before,
+h1.title[data-ref^="fleeting notes"]::before {
+  content: "\ea51";
+}
 /* Literature Notes */
-span.page-reference[data-ref="Literature Notes"] { 
-  background: var(--ls-primary-background-color);
-  background-size: 100%;
-  color: var(--ls-primary-text-color);
-  padding: 2px 5px 2px 5px;
-  font-size: 13px;
-  line-height: 1em;
-  font-weight: 500;
-  border-radius: 5px 5px 5px 5px;
-  border-style: solid;
-  border-color: var(--ls-link-ref-text-color);
-  border-width: thin;
-  position:relative;
+span.page-reference[data-ref="Literature Notes"]::before,
+h1.title[data-ref^="literature notes"]::before {
+  content: "\ed4f";
 }
-span.page-reference[data-ref="Literature Notes"] .bracket {
-  display: none;
-}
-span.page-reference[data-ref="Literature Notes"]::before {
-  background-color:                 var(--ls-link-ref-text-color);
-  content:                          "";
-  display:                          inline-block;
-  position:                         relative;
-  bottom:                           -3px;
-  left:                             -2px;
-  -webkit-mask-box-image:           url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-charging-pile' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cline x1='18' y1='7' x2='17' y2='8' /%3E%3Cpath d='M14 11h1a2 2 0 0 1 2 2v3a1.5 1.5 0 0 0 3 0v-7l-3 -3' /%3E%3Cpath d='M4 20v-14a2 2 0 0 1 2 -2h6a2 2 0 0 1 2 2v14' /%3E%3Cpath d='M9 11.5l-1.5 2.5h3l-1.5 2.5' /%3E%3Cline x1='3' y1='20' x2='15' y2='20' /%3E%3Cline x1='4' y1='8' x2='14' y2='8' /%3E%3C/svg%3E");
-  margin:                           -13px 2px 0px 0px;
-  width:                            1.1rem;
-  height:                           1.0rem;
-}
-
-span.page-reference[data-ref="Literature Notes"]:hover::before {
-  background-color: var(--ls-link-ref-text-hover-color);
-}
-
 /* Reference Notes */
-/* The text *after* is not as important */
-span.page-reference[data-ref="Reference Notes"] { 
-  background: var(--ls-primary-background-color);
-  background-size: 100%;
-  color: var(--ls-primary-text-color);
-  padding: 2px 5px 2px 5px;
-  font-size: 13px;
-  line-height: 1em;
-  font-weight: 500;
-  border-radius: 5px 5px 5px 5px;
-  border-style: solid;
-  border-color: var(--ls-link-ref-text-color);
-  border-width: thin;
-  position:relative;
+span.page-reference[data-ref="Reference Notes"]::before,
+h1.title[data-ref^="reference notes"]::before {
+  content: "\efec";
 }
-span.page-reference[data-ref="Reference Notes"] .bracket {
-  display: none;
-}
-span.page-reference[data-ref="Reference Notes"]::before {
-  background-color:                 var(--ls-link-ref-text-color);
-  content:                          "";
-  display:                          inline-block;
-  position:                         relative;
-  bottom:                           -3px;
-  left:                             -2px;
-  margin:                           -13px 0px 0px 0px;
-  -webkit-mask-box-image:           url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-current-location' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Ccircle cx='12' cy='12' r='3' /%3E%3Ccircle cx='12' cy='12' r='8' /%3E%3Cline x1='12' y1='2' x2='12' y2='4' /%3E%3Cline x1='12' y1='20' x2='12' y2='22' /%3E%3Cline x1='20' y1='12' x2='22' y2='12' /%3E%3Cline x1='2' y1='12' x2='4' y2='12' /%3E%3C/svg%3E");
-  width:                            1.1rem;
-  height:                           1.0rem;
-} 
-
-span.page-reference[data-ref="Reference Notes"]:hover::before {
-  background-color: var(--ls-link-ref-text-hover-color);
-}
-
-/* Permanent Notes */
-span.page-reference[data-ref="Permanent Notes"] .page-ref {
-  color: var(--ct-background) !important;
-}
-
-span.page-reference[data-ref="Permanent Notes"] .bracket {
-  display: none;
-}
-span.page-reference[data-ref="Permanent Notes"] {
-  background-image: linear-gradient(90deg, var(--ct-page-reference-color), var(--ct-page-reference-color));
-  background-size: 100%;
-  color: var(--ct-background) !important;
-  padding: 2px 5px 2px 8px;
-  font-size: 13px;
-  line-height: 1em;
-  font-weight: 500;
-  border-radius: 3px 0 0 3px;
-  position:relative;
-  margin-right: 0.5em;
-  margin: 0 0.7em 0 0.1em
-}
-
-span.page-reference[data-ref="Permanent Notes"] + span[data-ref] { 
-  background: var(--ct-background);
-  color: var(--ls-primary-text-color);
-  padding: 3px 5px 3px 15px;
-  font-size: 13px;
-  line-height: 0.9em;
-  font-weight: 400;
-  border-radius: 0 3px 3px 0;
-  margin-left: -10px;
-}
-
-span.page-reference[data-ref="Permanent Notes"]:after,
-span.page-reference[data-ref="Permanent Notes"]:before {
-  left: 100%;
-  top: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-}
-
-span.page-reference[data-ref="Permanent Notes"]::after {
-  color: var(--ct-background);
-  border-left-color: var(--ct-page-reference-color);
-  border-width: 10px;
-  margin-top: -10px;
-}
-
-span.page-reference[data-ref="Permanent Notes"]:hover {
-  background-image: linear-gradient(90deg, var(--ct-page-reference-color-hover), var(--ct-page-reference-color-hover));
-}
-
-span.page-reference[data-ref="Permanent Notes"]:hover::after {
-  border-left-color: var(--ct-page-reference-color-hover);
-}
-
-/* Relevant Notes /* 
-/* FIXME add icon*/
-/* FIXME needs better coloring */
-span.page-reference[data-ref="Relevant Notes"] {
-  background: var(--ls-primary-background-color);
-  background-size: 100%;
-  color: var(--ls-primary-text-color);
-  padding: 2px 5px 2px 5px;
-  font-size: 13px;
-  line-height: 1em;
-  font-weight: 500;
-  border-radius: 5px 5px 5px 5px;
-  border-style: solid;
-  border-color: var(--ls-link-ref-text-color);
-  border-width: thin;
-  position:relative;
-}
-
-span.page-reference[data-ref="Relevant Notes"] + span[data-ref] {
-  background: var(--ls-primary-background-color);
-  color: var(--ls-primary-text-color);
-  padding: 3px 5px 3px 8px;
-  font-size: 13px;
-  line-height: 1em;
-  font-weight: 400;
-  border-radius: 0px 5px 5px 0px;
-  margin-left: -8px; 
+/* Online Bugs */
+span.page-reference[data-ref="Online Bugs"]::before,
+h1.title[data-ref^="online bugs"]::before {
+  content: "\ea48";
 }
 /***************************************************************
 ************************ Date Picker ***************************
@@ -1748,7 +1656,12 @@ label.day-enabled {
 .white-theme,
 html[data-theme="light"] {
   --left-sidebar-color: #d9e6d6;
-  --ls-table-tr-even-background-color: rgba(150, 181, 192, 0.4); /* table even background color */
+  --ls-table-tr-even-background-color: rgba(
+    150,
+    181,
+    192,
+    0.4
+  ); /* table even background color */
   --ls-secondary-background-color: var(
     --ls-table-tr-even-background-color
   ); /* Marketplace Tab */
@@ -2012,7 +1925,7 @@ html[data-theme="light"] #journals .journal-item {
   margin-bottom: 0;
 }
 
-html[data-theme=light] .cp__header a {
+html[data-theme="light"] .cp__header a {
   color: var(--ct-page-reference-color);
 }
 
@@ -2055,7 +1968,7 @@ html[data-theme="dark"] {
   --ct-search-field-text-color: #d5d5d5;
   --ct-page-background: var(--ct-background);
   --ct-page-box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.3);
-  --ct-page-font-color: #f5f5f5;
+  --ct-page-font-color: #e0cdb5;
   --ct-page-title-color: #d2bea4;
   --ct-page-title-text-shadow: none;
   --ct-heading-color: var(--ct-page-title-color);
@@ -2073,10 +1986,10 @@ html[data-theme="dark"] {
   --ct-block-arrow-color: rgba(91, 74, 66, 1);
   --ct-bullet-size: 6px;
   --ct-bullet-color: #5f4d45;
-  --ct-bullet-closed-color: #606370;
+  --ct-bullet-closed-color: #3d4c47;
   --ct-block-properties-background: var(--ct-page-properties-background);
-  --ct-quote-background: var(--ct-page-properties-background);
-  --ct-quote-border-left: 5px solid #7b1e34;
+  --ct-quote-background: var(--left-sidebar-color);
+  --ct-quote-border-left: 5px solid #6bcc77;
   --ct-page-embed-background: var(--ct-page-properties-background);
   --ct-page-embed-header-color: #d76054;
   --ct-block-embed-background: var(--ct-page-properties-background);
@@ -2100,9 +2013,9 @@ html[data-theme="dark"] {
   --ct-external-link-background: none;
   --ct-external-link-background-hover: var(--ct-page-properties-background);
   --ct-external-link-border-bottom: 1px solid #623523;
-  --ct-external-link-border-bottom-hover: 1px solid #ff9d75;
-  --ct-external-link-color: #ff8453;
-  --ct-external-link-color-hover: #ff9d75;
+  --ct-external-link-border-bottom-hover: 1px solid #ff4500;
+  --ct-external-link-color: #ea6962;
+  --ct-external-link-color-hover: #ff4500;
   --ct-external-link-background-inside-block-reference: var(
     --ct-external-link-background
   );
